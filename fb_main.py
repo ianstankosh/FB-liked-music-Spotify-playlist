@@ -1,4 +1,11 @@
-# this program returns a Facebook user's liked music artists in a dictionay(artist: date of like)
+"""
+this program returns a Facebook user's liked music artists in a dictionary(artist: date of like)
+"""
+
+# "https://graph.facebook.com/{your-user-id}?fields=id,name&access_token={your-user-access-token}"
+# fields must be one or more strings separated by commas with no spaces in between
+
+# must re-generate token every few hours
 
 import requests
 import json
@@ -6,11 +13,6 @@ import secrets
 
 
 access_token = secrets.fb_access_token
-
-# "https://graph.facebook.com/{your-user-id}?fields=id,name&access_token={your-user-access-token}"
-# fields must be one or more strings separated by commas with no spaces in between
-
-# must re-generate token every few hours
 
 
 def get_usr_music():
@@ -41,6 +43,4 @@ def get_artist(data, artist_dict=None):
         pass
 
 
-#usr_data = get_usr_music('id,name,music')
-#music_data = usr_data['music']
 get_artist(get_usr_music())

@@ -1,15 +1,15 @@
-#this is my cleanup branch
+"""
+this is my cleanup branch
+"""
 
 import fb_main as fb
 import spotify_main as spot
 from datetime import date
 
 fb_data = fb.get_artist(fb.get_usr_music())
-#print(fb_data)
 
 
 def playlist_songs():
-
     playlist = []
 
     for artist in fb_data:
@@ -23,7 +23,7 @@ def playlist_songs():
         except IndexError:
             pass
 
-    return playlist[:99]  #  first 100 songs - spotify request can handle up to 100 uris
+    return playlist[:99]  # first 100 songs - Spotify request can handle up to 100 uris
 
 
 spot.add_track(spot.create_playlist(), playlist_songs())
