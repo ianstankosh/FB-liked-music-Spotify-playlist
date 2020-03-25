@@ -39,4 +39,4 @@ def get_artist(data, artist_dict=None):
         pass
 
 
-print(get_artist(get_usr_music()))
+#get_artist(get_usr_music())

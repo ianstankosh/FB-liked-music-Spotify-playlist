@@ -1,5 +1,7 @@
 """
-this is my cleanup branch
+- this is my cleanup branch
+- this is the main program for this project
+- it uses the fb liked artists and then finds the spotify uris of those artists
 """
 
 import fb_main as fb
@@ -10,6 +12,7 @@ fb_data = fb.get_artist(fb.get_usr_music())
 
 
 def playlist_songs():
+
     playlist = []
 
     for artist in fb_data:
@@ -23,7 +26,7 @@ def playlist_songs():
         except IndexError:
             pass
 
-    return playlist[:99]  # first 100 songs - Spotify request can handle up to 100 uris
+    return playlist[:100]  # first 100 songs - Spotify request can handle up to 100 uris
 
 
 spot.add_track(spot.create_playlist(), playlist_songs())

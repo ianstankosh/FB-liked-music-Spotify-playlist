@@ -27,6 +27,7 @@ def create_playlist():  # creates playlist and returns playlist id
     )
 
     resp_json = resp.json()
+
     return resp_json["id"]  # id of Sptify playlist
 
 
@@ -69,6 +70,7 @@ def get_top_tracks(artist_id):  # returns a dict of top song: date released
     for song_info in top_tracks['tracks']:
         song_dict[song_info['uri']] = song_info['album'][
             'release_date']  # dict of song title uri: date released, starting with top song
+
     return song_dict
 
 
@@ -91,9 +93,4 @@ def add_track(playlist_id, uris):  # uri can be a comma separated list
 
 
 #print(create_playlist())
-
-# print(get_top_tracks(get_artist_id('Vampire Weekend')))
-
-
-uris = ['spotify:track:39exKIvycQDgs4T6uXdyu0', 'spotify:track:1595LW73XBxkRk2ciQOHfr', 'spotify:track:4dRqYKhLVujxiBXcq50YzG', 'spotify:track:53KFMdxzi8IJDewiql1Qo3', 'spotify:track:78J9MBkAoqfvyeEpQKJDzD', 'spotify:track:7psPPGwhFzP3pyOcb3ivcT', 'spotify:track:2FjoCQaBoiEKs3FCvD0HkR', 'spotify:track:3t87C08isN6yw2DnWOorLm', 'spotify:track:7lQgoAWAFAo0XW7dW2TL1y', 'spotify:track:2Ml0l8YWJLQhPrRDLpQaDM']
-add_track(create_playlist(), uris)
+#add_track(create_playlist(), ['spotify:track:4q43Hi7hHAPwd270XxeTnK', 'spotify:track:4nLCmAEn9RAeJlhaOQ5RJ9', 'spotify:track:4fzsfWzRhPawzqhX8Qt9F3'])
