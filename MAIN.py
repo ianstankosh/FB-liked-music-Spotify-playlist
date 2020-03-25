@@ -21,7 +21,8 @@ def date_delta(fb_date, uri_date_dict):
             delta = abs(date.fromisoformat(fb_date) - date.fromisoformat(uri_date_dict[entry])).days
             delta_dict[delta] = entry
         except ValueError:  # in case FB date is not in iso format, ie, 2012 or 12/03/95
-            delta = abs(date.today() - date.fromisoformat(uri_date_dict[entry])).days
+            #delta = abs(date.today() - date.fromisoformat(uri_date_dict[entry])).days
+            delta = 0
             delta_dict[delta] = entry
 
     min_date = min(delta_dict)
