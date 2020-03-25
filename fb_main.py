@@ -9,6 +9,7 @@ import requests
 import json
 import secrets
 from secrets import fb_access_token
+import sys
 
 
 def get_usr_music():
@@ -17,7 +18,12 @@ def get_usr_music():
 
     resp = requests.get(base_url, params=params_dict)
 
-    return resp.json()['music']
+    try:
+        resp_music = resp.json()['music']
+        return resp_music
+    except KeyError:
+        print("*****Expired Facebook Access Token*****")
+        sys.exit()
 
 
 def get_artist(data, artist_dict=None):
