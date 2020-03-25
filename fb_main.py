@@ -13,13 +13,13 @@ access_token = secrets.fb_access_token
 # must re-generate token every few hours
 
 
-def get_usr_info(fields):
+def get_usr_music():
     base_url = secrets.fb_url_main
-    params_dict = {'fields': fields, 'access_token': access_token}
+    params_dict = {'fields': 'music', 'access_token': access_token}
 
     resp = requests.get(base_url, params=params_dict)
 
-    return resp.json()
+    return resp.json()['music']
 
 
 def get_artist(data, artist_dict=None):
@@ -41,6 +41,6 @@ def get_artist(data, artist_dict=None):
         pass
 
 
-usr_data = get_usr_info('id,name,music')
-music_data = usr_data['music']
-get_artist(music_data)
+#usr_data = get_usr_music('id,name,music')
+#music_data = usr_data['music']
+get_artist(get_usr_music())

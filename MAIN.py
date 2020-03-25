@@ -4,11 +4,8 @@ import fb_main as fb
 import spotify_main as spot
 from datetime import date
 
-fb_data = fb.get_artist(fb.get_usr_info('id,name,music')['music'])  ## should fix this later - incorporate 'music' in fb_main
+fb_data = fb.get_artist(fb.get_usr_music())
 #print(fb_data)
-
-# spot_data = spot.get_top_tracks(spot.get_artist_id('Vampire Weekend'))
-# print(spot_data)
 
 
 def playlist_songs():
@@ -18,7 +15,7 @@ def playlist_songs():
     for artist in fb_data:
         try:
             spot_data = spot.get_top_tracks(spot.get_artist_id(artist))
-            fb_data_date = fb.get_artist(fb.get_usr_info('id,name,music')['music'])[artist]  # the date user liked the artist
+            fb_data_date = fb.get_artist(fb.get_usr_music())[artist]  # the date user liked the artist
             #print(fb_data_date)
             #print(spot_data)
 
