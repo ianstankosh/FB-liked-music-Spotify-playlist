@@ -1,7 +1,7 @@
-fb_access_token = "EAAVVgypc6IkBACAwrYSByrj75eVJRtqajUE3HYAckFMaUGgsLv8NFbe10o7qFVufRTVWdf7Cqk4ZAKqzYAdiui6uZASxrUu4YAZAP6MoiKFtFtXLXKaP0huIy4jZA5jHXdo6W5mrrlKrKQKIreo1XUuOCqYVVTZBOKdWYbroOLfkJOQYOq23Kalob0JIezY6PF39IL0Iw1p7oD8EJsTve9NzYQ0ksESROZAiZAuSZCAQwgZDZD"
-fb_usr_id = "10218254032157127"
+fb_access_token = "***"
+fb_usr_id = "***"
 fb_url_main = "https://graph.facebook.com/v6.0/me"
 
-spotify_token = "BQBICGqzy79TkkZPWR5kRLPkfbkMUln3YSKeRkUQ8mnE6d_6Nc8Wz-oB1X1AAIY_isFf1Pnm86aBOiPPVB2--5EY2wMDajgDaDz7cB9b8EoIkbxILfm0HtU1jN7rbNP_YD5sxT-3teuKOaFSUq1dvmWVuqH2aEoErvopWwO4KI6r1SA"
-spotify_usr_id = "1242396384"
+spotify_token = "***"
+spotify_usr_id = "***"
 spotify_url_main = "https://api.spotify.com/v1/"
