@@ -35,6 +35,8 @@ def playlist_songs():
             for song in spot_data:
                 playlist.append(song)
 
+            #playlist.append(date_delta(fb_data_date, spot_data))
+
         except IndexError:  # if the liked artist/music on FB doesn't exist on Spotify
             pass
 
