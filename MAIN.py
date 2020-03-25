@@ -1,7 +1,6 @@
 """
-- this is my cleanup branch
 - this is the main program for this project
-- it uses the fb liked artists and then finds the spotify uris of those artists
+- it uses the fb_main.py and spotify_main.py to gather liked FB songs to add to a Spotify playlist
 """
 
 import fb_main as fb
