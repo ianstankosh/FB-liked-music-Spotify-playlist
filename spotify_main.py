@@ -104,5 +104,3 @@ def add_track(playlist_id, uris):  # uri can be a comma separated list
 uris = ['spotify:track:39exKIvycQDgs4T6uXdyu0', 'spotify:track:1595LW73XBxkRk2ciQOHfr', 'spotify:track:4dRqYKhLVujxiBXcq50YzG', 'spotify:track:53KFMdxzi8IJDewiql1Qo3', 'spotify:track:78J9MBkAoqfvyeEpQKJDzD', 'spotify:track:7psPPGwhFzP3pyOcb3ivcT', 'spotify:track:2FjoCQaBoiEKs3FCvD0HkR', 'spotify:track:3t87C08isN6yw2DnWOorLm', 'spotify:track:7lQgoAWAFAo0XW7dW2TL1y', 'spotify:track:2Ml0l8YWJLQhPrRDLpQaDM']
 add_track(create_playlist(), uris)
 
-# this is a clone
-# this is branch 1
