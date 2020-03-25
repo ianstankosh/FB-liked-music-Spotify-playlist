@@ -1,7 +1,7 @@
-'''
-this program has functions to create a new playlist on Spotify, get artists' id #s,
+"""
+- this program has functions to create a new playlist on Spotify, get artists' id #s,
 retrieve an artist's top 10 songs from Spotify, add song to the playlist
-'''
+"""
 
 import requests
 import secrets
@@ -27,14 +27,12 @@ def create_playlist():  # creates playlist and returns playlist id
     )
 
     resp_json = resp.json()
-    #print(resp_json["id"])
-    return resp_json["id"]
+    return resp_json["id"]  # id of Sptify playlist
 
 
 def get_artist_id(search_query):  # this is going to take the output from fb_main
 
     query = secrets.spotify_url_main + 'search'
-    # print(query)
     resp = requests.get(
         query,
         params={"q": search_query,
@@ -49,13 +47,12 @@ def get_artist_id(search_query):  # this is going to take the output from fb_mai
 
     resp_json = resp.json()
     artist_id = resp_json['artists']['items'][0]['id']
-    return artist_id
+    return artist_id  # artist id
 
 
 def get_top_tracks(artist_id):  # returns a dict of top song: date released
 
     query = secrets.spotify_url_main + 'artists/' + artist_id + '/top-tracks'
-    # print(query)
     resp = requests.get(
         query,
         params={"country": "US"},
@@ -78,10 +75,8 @@ def get_top_tracks(artist_id):  # returns a dict of top song: date released
 def add_track(playlist_id, uris):  # uri can be a comma separated list
 
     request_body = json.dumps({"uris": uris})
-    #print(request_body)
 
     query = secrets.spotify_url_main + 'playlists/' + playlist_id + '/' + 'tracks'
-    # print(query)
     resp = requests.post(
         query,
         data=request_body,
@@ -90,9 +85,8 @@ def add_track(playlist_id, uris):  # uri can be a comma separated list
             "Authorization": "Bearer {}".format(secrets.spotify_token)
         }
     )
-    #print(resp.url)
     resp_json = resp.json()
-    #print(resp_json)
+
     return resp_json
 
 
@@ -103,4 +97,3 @@ def add_track(playlist_id, uris):  # uri can be a comma separated list
 
 uris = ['spotify:track:39exKIvycQDgs4T6uXdyu0', 'spotify:track:1595LW73XBxkRk2ciQOHfr', 'spotify:track:4dRqYKhLVujxiBXcq50YzG', 'spotify:track:53KFMdxzi8IJDewiql1Qo3', 'spotify:track:78J9MBkAoqfvyeEpQKJDzD', 'spotify:track:7psPPGwhFzP3pyOcb3ivcT', 'spotify:track:2FjoCQaBoiEKs3FCvD0HkR', 'spotify:track:3t87C08isN6yw2DnWOorLm', 'spotify:track:7lQgoAWAFAo0XW7dW2TL1y', 'spotify:track:2Ml0l8YWJLQhPrRDLpQaDM']
 add_track(create_playlist(), uris)
-

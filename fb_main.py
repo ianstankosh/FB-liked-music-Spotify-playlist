@@ -1,11 +1,9 @@
 """
-This program returns a Facebook user's liked music artists in a dictionary(artist: date of like)
+- this program returns a Facebook user's liked music artists in a dictionary(artist: date of like)
+- "https://graph.facebook.com/{your-user-id}?fields=id,name&access_token={your-user-access-token}"
+- fields must be one or more strings separated by commas with no spaces in between
+- must re-generate token every few hours
 """
-
-# "https://graph.facebook.com/{your-user-id}?fields=id,name&access_token={your-user-access-token}"
-# fields must be one or more strings separated by commas with no spaces in between
-
-# must re-generate token every few hours
 
 import requests
 import json
