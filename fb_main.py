@@ -1,5 +1,5 @@
 """
-this program returns a Facebook user's liked music artists in a dictionary(artist: date of like)
+This program returns a Facebook user's liked music artists in a dictionary(artist: date of like)
 """
 
 # "https://graph.facebook.com/{your-user-id}?fields=id,name&access_token={your-user-access-token}"
@@ -10,14 +10,12 @@ this program returns a Facebook user's liked music artists in a dictionary(artis
 import requests
 import json
 import secrets
-
-
-access_token = secrets.fb_access_token
+from secrets import fb_access_token
 
 
 def get_usr_music():
     base_url = secrets.fb_url_main
-    params_dict = {'fields': 'music', 'access_token': access_token}
+    params_dict = {'fields': 'music', 'access_token': fb_access_token}
 
     resp = requests.get(base_url, params=params_dict)
 
@@ -43,4 +41,4 @@ def get_artist(data, artist_dict=None):
         pass
 
 
-get_artist(get_usr_music())
+print(get_artist(get_usr_music()))
