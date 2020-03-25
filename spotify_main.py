@@ -28,7 +28,7 @@ def create_playlist():  # creates playlist and returns playlist id
 
     resp_json = resp.json()
 
-    return resp_json["id"]  # id of Sptify playlist
+    return resp_json["id"]  # id of Spotify playlist
 
 
 def get_artist_id(search_query):  # this is going to take the output from fb_main
