@@ -34,7 +34,7 @@ def get_artist(data, artist_dict=None):
         next_resp = data['paging']['next']
         next_req = requests.get(next_resp).json()
         get_artist(next_req, artist_dict)
-        return artist_dict  # returns dictionary of artist name: date of like
+        return artist_dict  # returns dictionary {artist name: date of like}
     except:
         pass
 

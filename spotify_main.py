@@ -69,7 +69,7 @@ def get_top_tracks(artist_id):  # returns a dict of top song: date released
     song_dict = {}
     for song_info in top_tracks['tracks']:
         song_dict[song_info['uri']] = song_info['album'][
-            'release_date']  # dict of song title uri: date released, starting with top song
+            'release_date']  # dict {song title uri: date released}, starting with top song
 
     return song_dict
 
