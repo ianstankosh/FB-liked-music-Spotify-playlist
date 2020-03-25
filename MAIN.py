@@ -1,3 +1,5 @@
+#this is my cleanup branch
+
 import fb_main as fb
 import spotify_main as spot
 from datetime import date
@@ -33,6 +35,3 @@ def playlist_songs():
 
 #print(playlist_songs())
 spot.add_track(spot.create_playlist(), playlist_songs())
-
-#this is my cleanup branch
-
