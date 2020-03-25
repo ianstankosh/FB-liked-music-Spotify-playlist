@@ -7,6 +7,21 @@
 import fb_main as fb
 import spotify_main as spot
 from datetime import date
+import requests
+import secrets
+import sys
+
+### checking if tokens are valid
+fb_resp = requests.get(secrets.fb_url_main, params={'access_token': secrets.fb_access_token})
+if fb_resp.status_code == 400:
+    print("*****Expired Facebook Access Token*****")
+    sys.exit()
+
+resp = requests.get(secrets.spotify_url_main, headers={"Content-Type": "application/json", "Authorization": "Bearer {}".format(secrets.spotify_token)})
+if resp.status_code == 401:
+    print("*****Expired Spotify Access Token*****")
+    sys.exit()
+
 
 fb_data = fb.get_artist(fb.get_usr_music())  # {artist name: date of like}
 

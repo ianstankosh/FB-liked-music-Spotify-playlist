@@ -1,5 +1,8 @@
 from datetime import date
 from datetime import datetime
+import secrets
+import requests
+import sys
 
 x = date.fromisoformat('2000-03-20')
 y = date.fromisoformat('1832-02-03')
@@ -41,6 +44,19 @@ def date_delta(fb_date, uri_date_dict):
     return delta_dict[min_date]  # return spotify track uri
 
 
-print(date_delta('2020-03-03', {'spot:track:hgjasnsdjlg': '', 'spot:track:XXnsdjlg': '2000-01-11', 'spot:track:BBsdjlg': '2020-03-13'}))
+#print(date_delta('2020-03-03', {'spot:track:hgjasnsdjlg': '', 'spot:track:XXnsdjlg': '2000-01-11', 'spot:track:BBsdjlg': '2020-03-13'}))
 
 #print(date.today())
+
+"""
+resp = requests.get(secrets.fb_url_main, params={'access_token': secrets.fb_access_token})
+if resp.status_code == 400:
+    print("AHHHHHH")
+    sys.exit()
+"""
+
+
+resp = requests.get(secrets.spotify_url_main, headers={"Content-Type": "application/json", "Authorization": "Bearer {}".format(secrets.spotify_token)})
+if resp.status_code == 401:
+    print("NOOOO")
+    sys.exit()
