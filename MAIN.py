@@ -16,12 +16,8 @@ def playlist_songs():
         try:
             spot_data = spot.get_top_tracks(spot.get_artist_id(artist))
             fb_data_date = fb.get_artist(fb.get_usr_music())[artist]  # the date user liked the artist
-            #print(fb_data_date)
-            #print(spot_data)
 
             for song in spot_data:
-                #print(spot_data[song])  # date of each top 10 song starting with most popular
-                #print(song)
                 playlist.append(song)
 
         except IndexError:
@@ -30,5 +26,4 @@ def playlist_songs():
     return playlist[:99]  #  first 100 songs - spotify request can handle up to 100 uris
 
 
-#print(playlist_songs())
 spot.add_track(spot.create_playlist(), playlist_songs())
