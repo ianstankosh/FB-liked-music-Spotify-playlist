@@ -11,6 +11,7 @@ import requests
 import secrets
 import sys
 
+
 ### checking if tokens are valid
 fb_resp = requests.get(secrets.fb_url_main, params={'access_token': secrets.fb_access_token})
 if fb_resp.status_code == 400:
