@@ -28,13 +28,9 @@ def create_playlist():  # creates playlist and returns playlist id
     )
 
     resp_json = resp.json()
+    resp_json_id = resp_json["id"]  # id of Spotify playlist
 
-    try:
-        resp_json_id = resp_json["id"]  # id of Spotify playlist
-        return resp_json_id
-    except KeyError:
-        print("*****Expired Spotify OAuth Token*****")
-        sys.exit()
+    return resp_json_id
 
 
 def get_artist_id(search_query):  # this is going to take the output from fb_main

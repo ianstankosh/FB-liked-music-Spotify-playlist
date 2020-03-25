@@ -17,13 +17,9 @@ def get_usr_music():
     params_dict = {'fields': 'music', 'access_token': fb_access_token}
 
     resp = requests.get(base_url, params=params_dict)
+    resp_music = resp.json()['music']
 
-    try:
-        resp_music = resp.json()['music']
-        return resp_music
-    except KeyError:
-        print("*****Expired Facebook Access Token*****")
-        sys.exit()
+    return resp_music
 
 
 def get_artist(data, artist_dict=None):
