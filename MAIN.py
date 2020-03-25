@@ -21,7 +21,7 @@ def date_delta(fb_date, uri_date_dict):
             delta = abs(date.fromisoformat(fb_date) - date.fromisoformat(uri_date_dict[entry])).days
             delta_dict[delta] = entry
         except ValueError:  # in case FB date is not in iso format, ie, 2012 or 12/03/95
-            #delta = abs(date.today() - date.fromisoformat(uri_date_dict[entry])).days
+            #delta = abs(date.today() - date.fromisoformat(uri_date_dict[entry])).days  # update to handle non-iso strings
             delta = 0
             delta_dict[delta] = entry
 
@@ -37,9 +37,6 @@ def playlist_songs():
         try:  # in case artist liked on FB doesn't exist on Spotify
             spot_data = spot.get_top_tracks(spot.get_artist_id(artist))  # {track uri: date released, ...}
             fb_data_date = fb.get_artist(fb.get_usr_music())[artist]  # the date user liked the artist
-
-            #for song in spot_data:
-            #    playlist.append(song)
 
             playlist.append(date_delta(fb_data_date, spot_data))
 
