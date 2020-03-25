@@ -19,6 +19,7 @@ def date_delta(fb_date, uri_date_dict):
     delta_dict = {}
 
     for entry in uri_date_dict:
+
         delta = abs(date.fromisoformat(fb_date) - date.fromisoformat(uri_date_dict[entry])).days
         delta_dict[delta] = entry
 
@@ -26,4 +27,6 @@ def date_delta(fb_date, uri_date_dict):
     return delta_dict[min_date]  # return spotify track uri
 
 
-print(date_delta('2018-03-20', {'spot:track:hgjasnsdjlg': '1832-02-03', 'spot:track:XXnsdjlg': '1852-02-03', 'spot:track:BBsdjlg': '2019-12-13'}))
+print(date_delta('jfj', {'spot:track:hgjasnsdjlg': '2020-01-03', 'spot:track:XXnsdjlg': '1852-02-03', 'spot:track:BBsdjlg': '2020-03-13'}))
+
+#print(date.today())
