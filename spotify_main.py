@@ -3,7 +3,7 @@
 retrieve an artist's top 10 songs from Spotify, add song to the playlist
 """
 
-import requests
+
 import secrets
 import json
 import sys
